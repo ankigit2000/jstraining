@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Resturent</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+
+          <span class="navbar-text">
+            <button type="button" class="btn btn-outline-primary">
+              Logout
+            </button>
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-2 sidenav">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Home
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <p><a href="index.html">Dashboard</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Resturent
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <p>
+                    <a href="ResturentList.html"> All Resturent List</a>
+                  </p>
+                  <p>
+                    <a href="manageResturent.html">Add/Edit Resturent</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8 text-left">
+          <form>
+            <div class="col-md-12 col-sm-12">
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="name">Name* </label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="name"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="email">Email*</label>
+                <input
+                  type="email"
+                  class="form-control input-sm"
+                  id="email"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="mobile">Mobile*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="mobile"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="address">Address*</label>
+                <textarea
+                  class="form-control input-sm"
+                  id="address"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="city">City*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="city"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="state">State*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="state"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="country">Country*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="country"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="pincode">Pincode</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="pincode"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="years"
+                  >You could register for up to 10 years for Kalabhairava
+                  Shanthi - M.A *</label
+                >
+                <span class="help-block"
+                  >Please choose the no. of months for which you would like to
+                  register</span
+                >
+
+                <select class="form-control input-sm" id="years">
+                  <option>-- Select No of Year --</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="months"
+                  >You could register for up to 10 months for Kalabhairava
+                  Shanthi. *</label
+                >
+                <span class="help-block"
+                  >Please choose the no. of months for which you would like to
+                  register</span
+                >
+                <select class="form-control input-sm" id="months">
+                  <option>-- Select No of Month --</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="pincode"
+                  >Would you be visiting ashram to participate in Kalabhairava
+                  Shanthi - M.A ? *
+                  <input type="checkbox" checked data-toggle="toggle"
+                /></label>
+                <span class="help-block"
+                  >if you need a cottage to stay, you could book in advance
+                  through email to ishastay@ishafoundation.org</span
+                >
+              </div>
+
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="arrival">Arrival Date</label>
+                <input
+                  type="text"
+                  class="form-control input-sm datepicker"
+                  id="arrival"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12" id="deceased">
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="name">Name*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="name"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="gender">Gender*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="gender"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="age">Age*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="age"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="DOB">Date of Birth or Exact Birth Year*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm datepicker"
+                  id="DOB"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="DOD">Date of Death or Exact Death Year*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm datepicker"
+                  id=" DOD"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="mother">Deceased Person's Mother Name*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="mother"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="father">Deceased Person's Father Name*</label>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="father"
+                  placeholder=""
+                />
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <label for="photo">Photo*</label>
+                <input type="file" id="photo" />
+                <p class="help-block">
+                  Please upload individual photo. Group photo is not acceptable.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12" id="addblock">
+              <div class="form-group col-md-3 col-sm-3">
+                <input
+                  type="button"
+                  class="btn btn-primary"
+                  value="Add"
+                  id="add"
+                />
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="form-group col-md-3 col-sm-3 pull-right">
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  id="amount"
+                  readonly
+                  placeholder="Total Amount"
+                />
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="form-group col-md-3 col-sm-3 pull-right">
+                <input type="submit" class="btn btn-primary" value="Submit" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- <hr />
+        <h3>Test</h3>
+        <p>Lorem ipsum...</p> -->
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <footer>
+          <span>@copy Udipi</span>
+        </footer>
+      </div>
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
