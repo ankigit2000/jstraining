@@ -1,3 +1,16 @@
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+   background-image: url("https://img.freepik.com/free-photo/statistic-documents-with-businessman-blurred-background_1098-293.jpg?w=900&t=st=1661749458~exp=1661750058~hmac=d357d8972b543342429b0d14449388c858bc58b33413dff53932ba1f3d1d25bb");
+ }
+ @media (min-width: 576px){
+.col-sm-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+    height: 600px;
+}
+ }
  /* Remove the navbar's default margin-bottom and rounded borders */
  .navbar {
     margin-bottom: 0;
@@ -11,8 +24,19 @@
   .sidenav {
     padding-top: 20px;
     background-color: #f1f1f1;
-    height: 100%;
+    height: 200%;
   }
+
+
+#alignment,h1{
+  position: relative;
+  top:10px;
+}
+#lorem{
+  position: relative;
+  bottom: 400px;
+}
+
   
   /* Set black background color, white text and some padding */
   footer {
@@ -26,6 +50,7 @@
     .sidenav {
       height: auto;
       padding: 15px;
+      
     }
     .row.content {height:auto;}
   }

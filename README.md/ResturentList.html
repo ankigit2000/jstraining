@@ -11,6 +11,21 @@
 
     <link rel="stylesheet" href="./style.css" />
   </head>
+  <style>
+    body {
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-image: url('https://img.freepik.com/free-photo/businesswoman-using-tablet-analysis-graph-company-finance-strategy-statistics-success-concept-planning-future-office-room_74952-1410.jpg?w=996&t=st=1661751742~exp=1661752342~hmac=bca9ba96fbb4398f5f15e6f883dc9c845f9d1482dd03decac7de579d4e71fb6f');
+    }
+    @media (min-width: 576px) {
+      .col-sm-8 {
+        width: 71.666667%;
+        margin-top: 54px;
+        background-color: rgba(236, 226, 226, 0.8);
+      }
+    }
+  </style>
   <body>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
@@ -78,7 +93,7 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Resturent
+                  Manage Employees
                 </button>
               </h2>
               <div
@@ -89,10 +104,10 @@
               >
                 <div class="accordion-body">
                   <p>
-                    <a href="ResturentList.html"> All Resturent List</a>
+                    <a href="ResturentList.html"> Employee List</a>
                   </p>
                   <p>
-                    <a href="manageResturent.html">Add/Edit Resturent</a>
+                    <a href="manageResturent.html">Add/Edit Employee</a>
                   </p>
                 </div>
               </div>
@@ -100,23 +115,27 @@
           </div>
         </div>
         <div class="col-sm-8 text-left">
-          <h1>Resturent List</h1>
+          <h1>Employee List</h1>
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                <th scope="col">Action</th>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
               <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                   <button type="button" class="btn btn-primary btn-sm">
                     View
@@ -131,9 +150,11 @@
               </tr>
               <tr>
                 <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                   <button type="button" class="btn btn-primary btn-sm">
                     View
@@ -148,9 +169,11 @@
               </tr>
               <tr>
                 <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                   <button type="button" class="btn btn-primary btn-sm">
                     View
@@ -171,10 +194,64 @@
     <div class="container-fluid">
       <div class="row">
         <footer>
-          <span>@copy Udipi</span>
+          <span>@Welcomes You</span>
         </footer>
       </div>
     </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+      var myArray = [
+        {
+          ID:'4',
+          Name: 'Michael',
+          address: 'Nellore, andhrapradesh',
+          email: 'ankith@gmil.com',
+          role: 'developer',
+          mobileNumber: '098234807',
+        },
+        {
+          ID:'5',
+          name: 'Michael',
+          address: 'Nellore, andhrapradesh',
+          email: 'ankith@gmil.com',
+          role: 'developer',
+          mobileNumber: '098234807',
+        },
+        {
+          ID:'6',
+          name: 'Michael',
+          address: 'Nellore, andhrapradesh',
+          email: 'ankith@gmil.com',
+          role: 'developer',
+          mobileNumber: '098234807',
+        },
+      ];
+      buildtable(myArray);
+      function buildtable(data) {
+        var table = document.getElementById('myTable');
+        for (var i = 0; i < data.length; i++) {
+          var row = `<tr>
+                        <th>${data[i].ID}</th>
+                        <td>${data[i].name}</td>
+                        <td>${data[i].address}</td>
+                        <td>${data[i].email}</td>
+                        <td>${data[i].role}</td>
+                        <td>${data[i].mobileNumber}</td>
+                        <td>
+                  <button type="button" class="btn btn-primary btn-sm">
+                    View
+                  </button>
+                  <button type="button" class="btn btn-primary btn-sm">
+                    Edit
+                  </button>
+                  <button type="button" class="btn btn-primary btn-sm">
+                    Delete
+                  </button>
+                </td>
+                    </tr>`;
+          table.innerHTML += row;
+        }
+      }
+    </script>
   </body>
 </html>

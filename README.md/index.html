@@ -4,17 +4,20 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.css"
     />
-
+<link rel="stylesheet" href="./data.js"/>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body  onLoad="tableData()">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Resturent</a>
+        <a class="navbar-brand" href="#">Employee Data</a>
 
         <button
           class="navbar-toggler"
@@ -33,7 +36,7 @@
 
           <span class="navbar-text">
             <button type="button" class="btn btn-outline-primary">
-              Logout
+              <a href="login.html">Login</a>
             </button>
           </span>
         </div>
@@ -78,7 +81,7 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Resturent
+                  Manage Employees
                 </button>
               </h2>
               <div
@@ -89,23 +92,25 @@
               >
                 <div class="accordion-body">
                   <p>
-                    <a href="ResturentList.html"> All Resturent List</a>
+                    <a href="ResturentList.html"> Employee List</a>
                   </p>
                   <p>
-                    <a href="manageResturent.html">Add/Edit Resturent</a>
+                    <a href="manageResturent.html">Add/Edit Employee</a>
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-8 text-left">
-          <h1>Resturent details</h1>
-          <img
-          src=https://www.indiafilings.com/learn/wp-content/uploads/2018/09/Cafe-Udupi-Ruchi-Franchise.jpg
-          style="width: 50%" />
+        <div class="col-sm-8 text-left" id="alignment">
+          <h1 style="align-items: center">Employee Details</h1>
         </div>
-        <div class="container-sm" class="col-sm-8" style="width: 80%">
+        <div
+          class="container-sm"
+          class="col-sm-8"
+          style="width: 60%"
+          id="lorem"
+        >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -126,10 +131,11 @@
     <div class="container-fluid">
       <div class="row">
         <footer>
-          <span>@copy Udipi</span>
+          <span>@copy UST</span>
         </footer>
       </div>
     </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  
   </body>
 </html>

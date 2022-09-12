@@ -11,10 +11,109 @@
 
     <link rel="stylesheet" href="./style.css" />
   </head>
+  <style>
+    body {
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-image: url('https://img.freepik.com/free-photo/businesswoman-using-tablet-analysis-graph-company-finance-strategy-statistics-success-concept-planning-future-office-room_74952-1410.jpg?w=996&t=st=1661751742~exp=1661752342~hmac=bca9ba96fbb4398f5f15e6f883dc9c845f9d1482dd03decac7de579d4e71fb6f');
+    }
+    @media (min-width: 576px) {
+      .col-sm-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+        height: 555px;
+      }
+    }
+    @media (min-width: 768px) {
+      .col-md-12 {
+        flex: 0 0 auto;
+        width: 100%;
+        position: relative;
+        margin-bottom: 100px;
+      }
+    }
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: calc(-1 * var(--bs-gutter-y));
+      margin-right: calc(-0.5 * var(--bs-gutter-x));
+      margin-left: calc(-0.5 * var(--bs-gutter-x));
+      margin-top: 100px;
+    }
+    @media (min-width: 768px) {
+      .col-md-12 {
+        flex: 0 0 auto;
+        width: 100%;
+        position: relative;
+        margin-bottom: 25px;
+      }
+    }
+    label,
+    input {
+      display: block;
+    }
+    label {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #b0bec5;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      outline: 0;
+      border: 2px solid #b0bec5;
+    }
+    input:invalid {
+      border-color: #dd2c00;
+    }
+    #notify {
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 12px;
+      width: 100%;
+      color: #fff;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    #form {
+      position: relative;
+      margin-left: 290px;
+      border-radius: 100px;
+    }
+    #notify.error {
+      background-color: #dd2c00;
+    }
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: calc(-0.5 * var(--bs-gutter-x));
+      margin-left: calc(-0.5 * var(--bs-gutter-x));
+      margin-top: 5px;
+    }
+    .navbar-brand {
+      padding-top: var(--bs-navbar-brand-padding-y);
+      margin-right: var(--bs-navbar-brand-margin-end);
+      font-size: var(--bs-navbar-brand-font-size);
+      color: var(--bs-navbar-brand-color);
+      text-decoration: none;
+      white-space: nowrap;
+      position: relative;
+      margin-left: 660px;
+    }
+  </style>
   <body>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Resturent</a>
+        <a class="navbar-brand" href="#">Employee Data</a>
 
         <button
           class="navbar-toggler"
@@ -39,8 +138,7 @@
         </div>
       </div>
     </nav>
-
-    <div class="container-fluid">
+    <div class="container-fluid" id="employee">
       <div class="row content">
         <div class="col-sm-2 sidenav">
           <div class="accordion" id="accordionExample">
@@ -78,7 +176,7 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Resturent
+                  Manage Employees
                 </button>
               </h2>
               <div
@@ -89,10 +187,10 @@
               >
                 <div class="accordion-body">
                   <p>
-                    <a href="ResturentList.html"> All Resturent List</a>
+                    <a href="ResturentList.html"> Employee List</a>
                   </p>
                   <p>
-                    <a href="manageResturent.html">Add/Edit Resturent</a>
+                    <a href="manageResturent.html">Add/Edit employee</a>
                   </p>
                 </div>
               </div>
@@ -100,252 +198,101 @@
           </div>
         </div>
         <div class="col-sm-8 text-left">
-          <form>
+          <form id="form">
             <div class="col-md-12 col-sm-12">
               <div class="form-group col-md-6 col-sm-6">
-                <label for="name">Name* </label>
+                <label for="name" class="form-label">Enter the Name* </label>
                 <input
                   type="text"
+                  size="40"
                   class="form-control input-sm"
                   id="name"
-                  placeholder=""
+                  pattern="[a-z]{1,15}"
+                  placeholder="FirstName"
+                  title="Name should only contain lowercase letters. e.g. john"
+                  required
                 />
+                <div class="valid-feedback">Looks good!</div>
               </div>
               <div class="form-group col-md-6 col-sm-6">
+                <label for="validationServer02" class="form-label"
+                  >Last Name*
+                </label>
+                <input
+                  type="text"
+                  size="40"
+                  class="form-control input-sm"
+                  id="name"
+                  pattern="[a-z]{1,15}"
+                  placeholder="LastName"
+                  title="Name should only contain lowercase letters. e.g. john"
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="address">Address*</label>
+
+                <input
+                  type="text"
+                  name="Description"
+                  class="form-control input-sm"
+                  id="Contact"
+                  placeholder="Please Enter Your address"
+                />
+              </div>
+              <div class="form-group form-outline col-md-6 col-sm-6">
                 <label for="email">Email*</label>
                 <input
                   type="email"
+                  size="40"
+                  name="email"
                   class="form-control input-sm"
-                  id="email"
-                  placeholder=""
+                  id="mailID"
+                  placeholder="Enter your email"
+                  required
                 />
               </div>
-
               <div class="form-group col-md-6 col-sm-6">
-                <label for="mobile">Mobile*</label>
+                <label for="Contact">Number*</label>
                 <input
                   type="text"
+                  name="Number"
+                  pattern="[789][0-9]{9}"
                   class="form-control input-sm"
-                  id="mobile"
+                  id="Speciality"
                   placeholder=""
                 />
               </div>
-
               <div class="form-group col-md-6 col-sm-6">
-                <label for="address">Address*</label>
-                <textarea
-                  class="form-control input-sm"
-                  id="address"
-                  rows="3"
-                ></textarea>
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="city">City*</label>
-                <input
+                <label for="Role">Role*</label>
+                <select
                   type="text"
+                  name="Project"
                   class="form-control input-sm"
-                  id="city"
+                  id="Speciality"
                   placeholder=""
-                />
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="state">State*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="state"
-                  placeholder=""
-                />
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="country">Country*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="country"
-                  placeholder=""
-                />
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="pincode">Pincode</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="pincode"
-                  placeholder=""
-                />
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="years"
-                  >You could register for up to 10 years for Kalabhairava
-                  Shanthi - M.A *</label
                 >
-                <span class="help-block"
-                  >Please choose the no. of months for which you would like to
-                  register</span
-                >
-
-                <select class="form-control input-sm" id="years">
-                  <option>-- Select No of Year --</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
+                  <option>Front-End</option>
+                  <option>Back-End</option>
+                  <option>Testing</option>
+                  <option>Business</option>
+                  <option>Web designer</option>
                 </select>
               </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="months"
-                  >You could register for up to 10 months for Kalabhairava
-                  Shanthi. *</label
-                >
-                <span class="help-block"
-                  >Please choose the no. of months for which you would like to
-                  register</span
-                >
-                <select class="form-control input-sm" id="months">
-                  <option>-- Select No of Month --</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="pincode"
-                  >Would you be visiting ashram to participate in Kalabhairava
-                  Shanthi - M.A ? *
-                  <input type="checkbox" checked data-toggle="toggle"
-                /></label>
-                <span class="help-block"
-                  >if you need a cottage to stay, you could book in advance
-                  through email to ishastay@ishafoundation.org</span
-                >
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="arrival">Arrival Date</label>
-                <input
-                  type="text"
-                  class="form-control input-sm datepicker"
-                  id="arrival"
-                  placeholder=""
-                />
+              <br />
+              <div class="col-md-6 col-sm-6" id="addblock">
+                <div class="form-group col-md-3 col-sm-3">
+                  <input
+                    type="button"
+                    class="btn btn-primary"
+                    value="Add"
+                    id="add"
+                  />
+                </div>
               </div>
             </div>
-            <div class="col-md-12 col-sm-12" id="deceased">
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="name">Name*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="name"
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="gender">Gender*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="gender"
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="age">Age*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="age"
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="DOB">Date of Birth or Exact Birth Year*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm datepicker"
-                  id="DOB"
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="DOD">Date of Death or Exact Death Year*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm datepicker"
-                  id=" DOD"
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="mother">Deceased Person's Mother Name*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="mother"
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="father">Deceased Person's Father Name*</label>
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="father"
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group col-md-3 col-sm-3">
-                <label for="photo">Photo*</label>
-                <input type="file" id="photo" />
-                <p class="help-block">
-                  Please upload individual photo. Group photo is not acceptable.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-md-12 col-sm-12" id="addblock">
-              <div class="form-group col-md-3 col-sm-3">
-                <input
-                  type="button"
-                  class="btn btn-primary"
-                  value="Add"
-                  id="add"
-                />
-              </div>
-            </div>
-            <div class="col-md-12 col-sm-12">
-              <div class="form-group col-md-3 col-sm-3 pull-right">
-                <input
-                  type="text"
-                  class="form-control input-sm"
-                  id="amount"
-                  readonly
-                  placeholder="Total Amount"
-                />
-              </div>
-            </div>
-            <div class="col-md-12 col-sm-12">
+            <div class="col-md-6 col-sm-6">
               <div class="form-group col-md-3 col-sm-3 pull-right">
                 <input type="submit" class="btn btn-primary" value="Submit" />
               </div>
@@ -360,7 +307,7 @@
     <div class="container-fluid">
       <div class="row">
         <footer>
-          <span>@copy Udipi</span>
+          <span>@copy </span>
         </footer>
       </div>
     </div>
